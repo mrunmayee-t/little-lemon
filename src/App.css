@@ -28,6 +28,100 @@
   color: #61dafb;
 }
 
+h1{
+  font-family: 'Markazi text';
+  font-size: 64px;
+  font-weight: 700;
+  margin: 0;
+  color: #F4CE14;
+}
+
+h2{
+  font-family: 'Markazi text';
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0;
+  color: #ffffff;
+  
+}
+
+p{
+  font-family: 'Karla';
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+main{
+  display: flex;
+  width: 100%;
+  margin: auto;
+  background-color: #495E57;
+  justify-content: space-between;
+}
+
+main > div{
+  width: 45%;
+  margin-left: 10rem;
+  padding: 3rem;
+}
+
+header{
+  display: flex;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+header > img{
+  margin: auto;
+  width: 18rem;
+  height: 2rem;
+  
+}
+
+nav{
+  width: 100%;
+  display: flex;
+  justify-content: end;    
+}
+
+nav ul{
+  list-style: none;
+  text-align: center;
+
+}
+
+nav li{
+  display: inline-block;
+  padding: 2rem;
+}
+
+button{
+  background-color: #F4CE14;
+  color: #000000;
+  font-family: 'Karla';
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 16px;
+  width: 15rem;
+  height: 3rem;
+  box-shadow: none;
+}
+
+.hero-img{
+  width: 15rem;
+  height: 20rem;
+  border-radius: 16px;
+  position: relative;
+    top: 4rem;
+    right: 5rem;
+
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -74,6 +74,7 @@ header{
   left: 0;
   z-index: 99;
   width: 100%;
+  background-color: #ffffff;
 }
 
 header > img{
@@ -110,6 +111,8 @@ button{
   width: 15rem;
   height: 3rem;
   box-shadow: none;
+  border:none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .hero-img{
@@ -120,6 +123,68 @@ button{
     top: 4rem;
     right: 5rem;
 
+}
+
+.card-img{
+  width: 100%;
+  height: 12rem;
+  border-radius: 16px;
+}
+
+.card-div{
+  display: flex;
+  justify-content: space-evenly;
+  height: 65vh;
+  padding: 1rem;
+}
+
+.container-div-specials{
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem;
+}
+
+.card-title{
+  color: #000000;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Markazi Text';
+}
+
+.card-price{
+  color:#EE9972;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Markazi Text';
+}
+
+.card-inner-div{
+  background-color: #EDEFEE;
+  border-radius: 16px;
+  width: 18rem;
+}
+
+.inner-div{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.card-desc{
+  color:#000000;
+  font-size: 16px;
+  font-family: 'Karla';
+  font-weight: 400;
+ margin-left: 1rem;
+}
+
+.order-delivery{
+  color: #000000;
+  font-size: 18px;
+  font-family: 'Karla';
+  font-weight: 600;
+ margin-left: 1rem;
 }
 
 @keyframes App-logo-spin {

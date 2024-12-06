@@ -240,6 +240,31 @@ footer ul li {
   flex-grow: 1;
 }
 
+.about-container-div {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-left: 3rem;
+}
+.about-container-div h1,
+h2 {
+  width: 55%;
+  text-align: left;
+}
+
+.about-container-div p {
+  width: 55%;
+}
+
+.about-img {
+  width: 15rem;
+  height: 15rem;
+  position: absolute;
+  top: 6%;
+  left: 60%;
+  border-radius: 1rem;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

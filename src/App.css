@@ -28,45 +28,44 @@
   color: #61dafb;
 }
 
-h1{
-  font-family: 'Markazi text';
+h1 {
+  font-family: "Markazi text";
   font-size: 64px;
   font-weight: 700;
   margin: 0;
-  color: #F4CE14;
+  color: #f4ce14;
 }
 
-h2{
-  font-family: 'Markazi text';
+h2 {
+  font-family: "Markazi text";
   font-size: 40px;
   font-weight: 400;
   margin: 0;
   color: #ffffff;
-  
 }
 
-p{
-  font-family: 'Karla';
+p {
+  font-family: "Karla";
   font-size: 18px;
   font-weight: 400;
   color: #ffffff;
 }
 
-main{
+main {
   display: flex;
   width: 100%;
   margin: auto;
-  background-color: #495E57;
+  background-color: #495e57;
   justify-content: space-between;
 }
 
-main > div{
+main > div {
   width: 45%;
   margin-left: 10rem;
   padding: 3rem;
 }
 
-header{
+header {
   display: flex;
   padding: 1rem;
   position: sticky;
@@ -77,114 +76,168 @@ header{
   background-color: #ffffff;
 }
 
-header > img{
+header > img {
   margin: auto;
   width: 18rem;
   height: 2rem;
-  
 }
 
-nav{
+nav {
   width: 100%;
   display: flex;
-  justify-content: end;    
+  justify-content: end;
 }
 
-nav ul{
+nav ul {
   list-style: none;
   text-align: center;
-
 }
 
-nav li{
+nav li {
   display: inline-block;
   padding: 2rem;
 }
 
-button{
-  background-color: #F4CE14;
+button {
+  background-color: #f4ce14;
   color: #000000;
-  font-family: 'Karla';
+  font-family: "Karla";
   font-size: 18px;
   font-weight: 400;
   border-radius: 16px;
   width: 15rem;
   height: 3rem;
   box-shadow: none;
-  border:none;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+button:hover {
+  cursor: pointer;
 }
 
-.hero-img{
+.hero-img {
   width: 15rem;
   height: 20rem;
   border-radius: 16px;
   position: relative;
-    top: 4rem;
-    right: 5rem;
-
+  top: 4rem;
+  right: 5rem;
 }
 
-.card-img{
+.card-img {
   width: 100%;
   height: 12rem;
   border-radius: 16px;
 }
 
-.card-div{
+.customersay-card-img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 16px;
+}
+
+.customersay-card-name {
+  text-align: center;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Markazi Text";
+  margin: auto;
+}
+
+.card-div {
   display: flex;
   justify-content: space-evenly;
   height: 65vh;
   padding: 1rem;
 }
 
-.container-div-specials{
+.container-div-specials {
   display: flex;
   justify-content: space-between;
   padding: 5rem;
 }
 
-.card-title{
+.card-title {
   color: #000000;
   font-size: 18px;
   font-weight: 700;
-  font-family: 'Markazi Text';
+  font-family: "Markazi Text";
 }
 
-.card-price{
-  color:#EE9972;
+.card-price {
+  color: #ee9972;
   font-size: 16px;
   font-weight: 500;
-  font-family: 'Markazi Text';
+  font-family: "Markazi Text";
 }
 
-.card-inner-div{
-  background-color: #EDEFEE;
+.card-inner-div {
+  background-color: #edefee;
   border-radius: 16px;
   width: 18rem;
 }
 
-.inner-div{
+.testimonials-main-container {
+  background-color: #edefee;
+}
+
+.customersay-card-inner-div {
+  width: 18rem;
+}
+
+.inner-div {
   display: flex;
   justify-content: space-between;
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
-.card-desc{
-  color:#000000;
+.card-desc {
+  color: #000000;
   font-size: 16px;
-  font-family: 'Karla';
+  font-family: "Karla";
   font-weight: 400;
- margin-left: 1rem;
+  margin-left: 1rem;
 }
 
-.order-delivery{
+.customersay-card-msg {
+  color: #000000;
+  font-size: 16px;
+  font-family: "Karla";
+  font-weight: 400;
+  margin-left: 1rem;
+  width: 16rem;
+}
+
+.order-delivery {
   color: #000000;
   font-size: 18px;
-  font-family: 'Karla';
+  font-family: "Karla";
   font-weight: 600;
- margin-left: 1rem;
+  margin-left: 1rem;
+}
+
+.footer-img {
+  width: 8rem;
+  height: 8rem;
+  padding: 1rem;
+  margin-left: 4rem;
+}
+
+footer {
+  display: flex;
+  background-color: #edefee;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 @keyframes App-logo-spin {

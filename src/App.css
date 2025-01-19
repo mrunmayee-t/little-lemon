@@ -51,7 +51,12 @@ p {
   color: #ffffff;
 }
 
-main {
+.main-container-div {
+  position: absolute;
+  display: flex;
+}
+
+.container-calltoaction {
   display: flex;
   width: 100%;
   margin: auto;
@@ -59,7 +64,7 @@ main {
   justify-content: space-between;
 }
 
-main > div {
+.container-calltoaction > div {
   width: 45%;
   margin-left: 10rem;
   padding: 3rem;
@@ -96,6 +101,34 @@ nav ul {
 nav li {
   display: inline-block;
   padding: 2rem;
+  position: relative;
+}
+
+.nav-bar a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f4ce14;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-bar a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-bar a:hover {
+  cursor: pointer;
+}
+
+nav li a {
+  font-weight: 700;
+  font-family: "Karla";
 }
 
 button {
@@ -124,10 +157,22 @@ button:hover {
   right: 5rem;
 }
 
+.wrapper {
+  height: auto;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
 .card-img {
+  display: block;
   width: 100%;
   height: 12rem;
   border-radius: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-img:hover {
+  transform: scale(1.2);
 }
 
 .customersay-card-img {
@@ -148,7 +193,7 @@ button:hover {
 .card-div {
   display: flex;
   justify-content: space-evenly;
-  height: 65vh;
+  height: auto;
   padding: 1rem;
 }
 
@@ -160,14 +205,14 @@ button:hover {
 
 .card-title {
   color: #000000;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
   font-family: "Markazi Text";
 }
 
 .card-price {
   color: #ee9972;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 500;
   font-family: "Markazi Text";
 }
@@ -219,7 +264,7 @@ button:hover {
 }
 
 .footer-img {
-  width: 8rem;
+  width: 6rem;
   height: 8rem;
   padding: 1rem;
   margin-left: 4rem;
@@ -228,16 +273,43 @@ button:hover {
 footer {
   display: flex;
   background-color: #edefee;
+  padding: 0.5rem;
+
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 footer ul li {
   list-style: none;
+  transition: transform 250ms;
+  font-weight: 600;
+  font-family: "Karla";
+}
+
+.footer-ul li:hover {
+  transition: transform 125ms;
+  transform: translateX(10px);
+  color: #495e57;
+}
+
+.footer-ul li a:hover {
+  color: #495e57;
+}
+
+.footer-ul li {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
-  flex-grow: 1;
+  flex-grow: 0.75;
 }
 
 .about-container-div {
@@ -263,6 +335,48 @@ h2 {
   top: 6%;
   left: 60%;
   border-radius: 1rem;
+}
+
+.delivery-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+  margin: auto;
+  margin-left: 0.5rem;
+}
+
+.container-booking-form {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+.container-booking-form label {
+  color: #495e57;
+  font-family: "Karla";
+  font-weight: 700;
+}
+
+input {
+  border: 2px solid #495e57;
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 100%;
+  padding: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select {
+  border: 2px solid #495e57;
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 100%;
+  padding: 5px;
 }
 
 @keyframes App-logo-spin {

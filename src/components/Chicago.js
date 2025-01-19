@@ -4,8 +4,8 @@ import img2 from "../assets/images/Mario and Adrian b.jpg";
 const Chicago = () => {
   return (
     <>
-      <div style={{ display: "flex", position: "relative" }}>
-        <div className="about-container-div">
+      <div style={{ display: "flex", position: "relative", height: "30rem" }}>
+        <div className="about-container-div" id="about-section">
           <h1 style={{ color: "black" }}>Little Lemon</h1>
           <h2 style={{ color: "black" }}>Chicago</h2>
           <p style={{ color: "black" }}>
@@ -27,7 +27,7 @@ const Chicago = () => {
         <img className="about-img" src={img1} alt="img1" />
         <img
           className="about-img"
-          style={{ zIndex: "9", top: "35%", left: "71%" }}
+          style={{ zIndex: "9", top: "30%", left: "70%" }}
           src={img2}
           alt="img2"
         />

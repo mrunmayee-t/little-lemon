@@ -32,8 +32,8 @@ const CustomersSay = () => {
       <div className="testimonials-main-container">
         <h1 style={{ color: "black", textAlign: "center" }}>Testimonials</h1>
         <div className="card-div">
-          {dataSource.map((element) => (
-            <div className="customersay-card-inner-div">
+          {dataSource.map((element, index) => (
+            <div key={index} className="customersay-card-inner-div">
               <RatingReview
                 rating={element.rating}
                 setRating={element.rating}
@@ -65,9 +65,10 @@ export default CustomersSay;
 const RatingReview = ({ rating, setRating }) => {
   return (
     <div style={{ padding: "1rem" }}>
-      {[1, 2, 3, 4, 5].map((star) => {
+      {[1, 2, 3, 4, 5].map((star, index) => {
         return (
           <span
+            key={index}
             className="start"
             style={{
               cursor: "pointer",

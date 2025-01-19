@@ -1,14 +1,65 @@
-const Nav = () => {
-    return(<nav>
-        <ul className="nav-bar">
-            <li><a href="/home">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/menu">Menu</a></li>
-            <li><a href="/reservations">Reservastions</a></li>
-            <li><a href="/order-online">Order Online</a></li>
-            <li><a href="/login">Login</a></li>
-        </ul>
-    </nav>)
-}
+import { useNavigate } from "react-router-dom";
 
-export default Nav
+const menuItem = [
+  {
+    id: "home",
+    path: "/",
+    name: "Home",
+  },
+  {
+    id: "about",
+    path: "/#about",
+    name: "About",
+  },
+  {
+    id: "Menu",
+    path: "#",
+    name: "Menu",
+  },
+  {
+    id: "reservations",
+    path: "/booking",
+    name: "Reservations",
+  },
+  {
+    id: "order-online",
+    path: "#",
+    name: "Order Online",
+  },
+  {
+    id: "login",
+    path: "#",
+    name: "Login",
+  },
+];
+
+const Nav = () => {
+  const navigate = useNavigate();
+  const handleClick = (anchor, path) => () => {
+    const id = `${anchor}-section`;
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      navigate(path);
+    }
+  };
+  return (
+    <nav>
+      <ul className="nav-bar">
+        {menuItem.map((items) => (
+          <li key={items.id}>
+            <a href={items.path} onClick={handleClick(items.id, items.path)}>
+              {items.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+export default Nav;

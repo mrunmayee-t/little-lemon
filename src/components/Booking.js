@@ -1,7 +1,7 @@
 import { useState } from "react";
 import BookingForm from "./BookingForm";
 
-const Booking = () => {
+const Booking = (props) => {
   // const [bookingDate, setDate] = useState("");
   // const [bookingTime, setTime] = useState("");
   // const [guestsNumber, setGuestes] = useState("");
@@ -16,7 +16,13 @@ const Booking = () => {
   // ]);
   // const [tableBooking, setTableBooking] = useState("");
 
-  return <BookingForm />;
+  return (
+    <BookingForm
+      availableTimes={props.availableTimes}
+      dispatch={props.dispatch}
+      submitForm={props.submitForm}
+    />
+  );
 };
 
 export default Booking;

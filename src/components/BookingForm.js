@@ -1,22 +1,53 @@
 import React, { useState } from "react";
 import restaurant from "../assets/images/restaurant.jpg";
-const BookingForm = () => {
+import { useFormik } from "formik";
+import * as Yup from "yup";
+const BookingForm = (props) => {
   const [bookingDate, setDate] = useState("");
   const [bookingTime, setTime] = useState("");
   const [guestsNumber, setGuestes] = useState("");
   const [ocasion, setOcasion] = useState("");
-  const [availableTimes, setAvailableTimes] = useState([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ]);
+  const [availableTimes, setAvailableTimes] = useState(props.availableTimes);
   const [tableBooking, setTableBooking] = useState("");
-  const handleOnClick = () => {
-    console.log("submit clicked");
+
+  const formik = useFormik({
+    initialValues: {
+      date: new Date().toLocaleDateString("en-CA"),
+      time: availableTimes[0],
+      guests: 1,
+      occasion: "birthday",
+    },
+    onSubmit: (values) => {
+      const response = handleSubmitForm(values);
+      if (response) {
+        localStorage.setItem("Bookings", JSON.stringify(values));
+        //navigate("/confirmation");
+        // console.log(values);
+      }
+    },
+    validationSchema: Yup.object({
+      date: Yup.date().required("Date is required"),
+      time: Yup.string().oneOf(availableTimes).required("Time is required"),
+      guests: Yup.number()
+        .min(1, "Must be at least 1")
+        .max(10, "Must be at most 10")
+        .required("Number of guests is required"),
+      ocasion: Yup.string()
+        .oneOf(["birthday", "anniversary"])
+        .required("Ocassion is required"),
+    }),
+  });
+
+  const handleDateChange = (e) => {
+    setDate(e);
+    props.dispatch(e);
   };
+
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    props.submitForm(e);
+  };
+
   return (
     <>
       <div className="container-booking-form">
@@ -27,18 +58,24 @@ const BookingForm = () => {
             gap: "20px",
             margin: "auto",
           }}
-          onSubmit={handleOnClick}
+          onSubmit={formik.handleSubmit}
         >
           <label htmlFor="res-date">Choose date</label>
           <input
             type="date"
             id="res-date"
+            test-id="date-id"
             value={bookingDate}
-            onChange={(e) => setDate(e.target.value)}
+            onChange={(e) => handleDateChange(e.target.value)}
+            {...formik.getFieldProps("date")}
           />
+          <span className="error-text">
+            {formik.touched.date && formik.errors.date}
+          </span>
           <label htmlFor="res-time">Choose time</label>
           <select
-            id="res-time "
+            {...formik.getFieldProps("time")}
+            id="res-time"
             value={bookingTime}
             onChange={(e) => setTime(e.target.value)}
           >
@@ -46,6 +83,9 @@ const BookingForm = () => {
               <option key={index}>{element}</option>
             ))}
           </select>
+          <span className="error-text">
+            {formik.touched.time && formik.errors.time}
+          </span>
           <label htmlFor="guests">Number of guests</label>
           <input
             type="number"
@@ -54,18 +94,27 @@ const BookingForm = () => {
             max="10"
             id="guests"
             value={guestsNumber}
+            required={true}
             onChange={(e) => setGuestes(e.target.value)}
+            {...formik.getFieldProps("guests")}
           />
+          <span className="error-text">
+            {formik.touched.guests && formik.errors.guests}
+          </span>
           <label htmlFor="occasion">Occasion</label>
           <select
             id="occasion"
             value={ocasion}
             onChange={(e) => setOcasion(e.target.value)}
+            {...formik.getFieldProps("ocassion")}
           >
-            <option>Birthday</option>
-            <option>Anniversary</option>
+            <option value="birthday">Birthday</option>
+            <option value="anniversary">Anniversary</option>
           </select>
-          <button type="submit" style={{ width: "100%" }}>
+          <span className="error-text">
+            {formik.touched.ocasion && formik.errors.ocasion}
+          </span>
+          <button aria-label="On Click" type="submit" style={{ width: "100%" }}>
             Make Your reservation
           </button>
         </form>

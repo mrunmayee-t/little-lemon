@@ -5,15 +5,6 @@ import { useReducer, useState } from "react";
 
 const CallToAction = () => {
   const navigate = useNavigate();
-  const updateTimes = () => {
-    return availableTimes;
-  };
-
-  const initializeTimes = () => {};
-  const [availableTimes, setAvailableTimes] = useReducer(
-    initializeTimes,
-    updateTimes
-  );
 
   const handleReserveTableClick = () => {};
   return (

@@ -23,3 +23,14 @@ test("updateTimes returns the same state", () => {
   //const newState = updateTimes(state, action);
   //expect(newState).toEqual(state);
 });
+
+test("submitAPI returns true", () => {
+  const formData = {
+    date: "2022-10-12",
+    time: "20:00",
+    guests: 5,
+    occasion: "Birthday",
+  };
+  const result = submitAPI(formData);
+  expect(result).toBe(true);
+});

@@ -18,23 +18,17 @@ const BookingForm = (props) => {
       occasion: "birthday",
     },
     onSubmit: (values) => {
-      const response = handleSubmitForm(values);
-      if (response) {
-        localStorage.setItem("Bookings", JSON.stringify(values));
-        //navigate("/confirmation");
-        // console.log(values);
-      }
+      //alert(JSON.stringify(values, null, 2));
+      handleSubmitForm(values);
     },
     validationSchema: Yup.object({
       date: Yup.date().required("Date is required"),
-      time: Yup.string().oneOf(availableTimes).required("Time is required"),
+      time: Yup.string().required("Time is required"),
       guests: Yup.number()
         .min(1, "Must be at least 1")
         .max(10, "Must be at most 10")
         .required("Number of guests is required"),
-      ocasion: Yup.string()
-        .oneOf(["birthday", "anniversary"])
-        .required("Ocassion is required"),
+      occasion: Yup.string().required("Occasion is required"),
     }),
   });
 
@@ -44,7 +38,7 @@ const BookingForm = (props) => {
   };
 
   const handleSubmitForm = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     props.submitForm(e);
   };
 

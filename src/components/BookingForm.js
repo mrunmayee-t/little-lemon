@@ -58,7 +58,7 @@ const BookingForm = (props) => {
           <input
             type="date"
             id="res-date"
-            test-id="date-id"
+            data-testid="date-id"
             value={bookingDate}
             onChange={(e) => handleDateChange(e.target.value)}
             {...formik.getFieldProps("date")}
@@ -70,6 +70,7 @@ const BookingForm = (props) => {
           <select
             {...formik.getFieldProps("time")}
             id="res-time"
+            data-testid="time"
             value={bookingTime}
             onChange={(e) => setTime(e.target.value)}
           >
@@ -87,6 +88,7 @@ const BookingForm = (props) => {
             min="1"
             max="10"
             id="guests"
+            data-testid="guests"
             value={guestsNumber}
             required={true}
             onChange={(e) => setGuestes(e.target.value)}
@@ -98,6 +100,7 @@ const BookingForm = (props) => {
           <label htmlFor="occasion">Occasion</label>
           <select
             id="occasion"
+            data-testid="ocasion"
             value={ocasion}
             onChange={(e) => setOcasion(e.target.value)}
             {...formik.getFieldProps("ocassion")}
@@ -108,7 +111,12 @@ const BookingForm = (props) => {
           <span className="error-text">
             {formik.touched.ocasion && formik.errors.ocasion}
           </span>
-          <button aria-label="On Click" type="submit" style={{ width: "100%" }}>
+          <button
+            data-testid="submit"
+            aria-label="On Click"
+            type="submit"
+            style={{ width: "100%" }}
+          >
             Make Your reservation
           </button>
         </form>

@@ -2,6 +2,7 @@ import greekSalad from "../assets/images/greek salad.jpg";
 import bruchetta from "../assets/images/bruchetta.svg";
 import lemonDessert from "../assets/images/lemon dessert.jpg";
 import delivery from "../assets/images/delivery.svg";
+import { useNavigate } from "react-router-dom";
 
 const dataSource = [
   {
@@ -28,11 +29,12 @@ const dataSource = [
 ];
 
 const Specials = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="container-div-specials">
         <h1 style={{ color: "black" }}>This weeks specials!</h1>
-        <button>Online Menu</button>
+        <button onClick={() => navigate("/maintenance")}>Online Menu</button>
       </div>
 
       <div className="card-div">

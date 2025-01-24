@@ -13,7 +13,7 @@ const menuItem = [
   },
   {
     id: "Menu",
-    path: "#",
+    path: "/maintenance",
     name: "Menu",
   },
   {
@@ -22,13 +22,8 @@ const menuItem = [
     name: "Reservations",
   },
   {
-    id: "order-online",
-    path: "#",
-    name: "Order Online",
-  },
-  {
     id: "login",
-    path: "#",
+    path: "/maintenance",
     name: "Login",
   },
 ];
@@ -57,6 +52,7 @@ const Nav = () => {
             </a>
           </li>
         ))}
+        <button className="nav-button">Order Online</button>
       </ul>
     </nav>
   );

@@ -72,7 +72,6 @@ p {
 
 header {
   display: flex;
-  padding: 1rem;
   position: sticky;
   top: 0;
   left: 0;
@@ -91,6 +90,7 @@ nav {
   width: 100%;
   display: flex;
   justify-content: end;
+  margin-right: 1%;
 }
 
 nav ul {
@@ -133,7 +133,7 @@ nav li a {
 
 button {
   background-color: #f4ce14;
-  color: #000000;
+  color: #495e57;
   font-family: "Karla";
   font-size: 18px;
   font-weight: 400;
@@ -143,9 +143,36 @@ button {
   box-shadow: none;
   border: none;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: transform 250ms;
 }
 button:hover {
   cursor: pointer;
+  background-color: #495e57;
+  color: #f4ce14;
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-10px);
+}
+
+.nav-button {
+  background-color: #495e57;
+  color: #f4ce14;
+  font-family: "Karla";
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 16px;
+  width: 10rem;
+  height: 3rem;
+  box-shadow: none;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: transform 250ms;
+}
+
+.nav-button:hover {
+  background-color: #f4ce14;
+  color: #495e57;
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-10px);
 }
 
 .hero-img {
@@ -225,6 +252,7 @@ button:hover {
 
 .testimonials-main-container {
   background-color: #edefee;
+  margin-top: 2%;
 }
 
 .customersay-card-inner-div {
@@ -266,8 +294,8 @@ button:hover {
 .footer-img {
   width: 6rem;
   height: 8rem;
-  padding: 1rem;
-  margin-left: 4rem;
+  margin-left: 4%;
+  margin-top: 2%;
 }
 
 footer {
@@ -308,8 +336,10 @@ a {
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-grow: 0.75;
+  flex-wrap: nowrap;
+  align-items: flex-start;
 }
 
 .about-container-div {

@@ -6,6 +6,7 @@ import Booking from "./components/Booking";
 import Header from "./components/Header";
 import { useEffect, useReducer } from "react";
 import ConfirmBooking from "./components/ConfirmBooking";
+import Maintenance from "./components/Maintenance";
 
 const App = () => {
   const seededRandom = function (seed) {
@@ -76,6 +77,7 @@ const App = () => {
           }
         ></Route>
         <Route path="/confirmBooking" element={<ConfirmBooking />}></Route>
+        <Route path="/maintenance" element={<Maintenance />}></Route>
       </Routes>
       <Footer />
       {/* </BrowserRouter> */}

@@ -4,7 +4,14 @@ import img2 from "../assets/images/Mario and Adrian b.jpg";
 const Chicago = () => {
   return (
     <>
-      <div style={{ display: "flex", position: "relative", height: "30rem" }}>
+      <div
+        style={{
+          display: "flex",
+          position: "relative",
+          height: "30rem",
+          padding: "1%",
+        }}
+      >
         <div className="about-container-div" id="about-section">
           <h1 style={{ color: "black" }}>Little Lemon</h1>
           <h2 style={{ color: "black" }}>Chicago</h2>

@@ -48,8 +48,8 @@ const BookingForm = (props) => {
         <form
           style={{
             display: "grid",
-            width: "300px",
-            gap: "20px",
+            width: "360px",
+            gap: "13px",
             margin: "auto",
           }}
           onSubmit={formik.handleSubmit}
@@ -123,8 +123,8 @@ const BookingForm = (props) => {
         <img
           src={restaurant}
           style={{
-            width: "50rem",
-            height: "30rem",
+            width: "48rem",
+            height: "28rem",
             margin: "auto",
             marginTop: "2%",
           }}
